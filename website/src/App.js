@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+
 class App extends React.Component {
   constructor() {
     super();
@@ -9,15 +10,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.loadPhotos();
+    axios.get('http://localhost:3000/photos')
+      .then(res =>{
+        this.setState({photos: res.data })
+      });
   }
 
-  loadPhotos() {
-    axios.get('http://localhost:3000/photos')
-      .then(({ data }) => {
-        this.setState({ photos: data })
-      })
-  }
+  
   render() {
 
     const photos = this.state.photos.map(photo => {
