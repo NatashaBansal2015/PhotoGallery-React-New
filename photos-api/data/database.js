@@ -3,10 +3,10 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
 
 
-   host: '127.0.0.1',
+   host: 'photogallery.cjnvxhyn21ul.us-east-2.rds.amazonaws.com',
    user: 'admin',
    password: 'adminroot',
-   database: 'Media'
+   database: 'PhotoGallery'
 })
 
 connection.connect((errors) => {
